@@ -1,0 +1,21 @@
+{
+    "stats": {
+        "acertos": 0,
+        "erros": -99999999
+    },
+    "tries": 9999999,
+    "letters": [],
+    "pov": "_______",
+    "povlist": [
+        "_",
+        "_",
+        "_",
+        "_",
+        "_",
+        "_",
+        "_"
+    ],
+    "cword": "avocado",
+    "word": "",
+    "words": ["cheat"]
+}
