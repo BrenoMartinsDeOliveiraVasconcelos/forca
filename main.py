@@ -33,24 +33,25 @@ try:
                 return line.split("=")[1].strip()
 
 
-    def ost(id):
-        global music
-        
-        if music:
-
-            if settings("music") == "0":
-                music = False
-                return
-
-            if os.name != "posix":
-                script_dir = os.path.dirname(__file__)
-            else:
-                script_dir = "/".join(os.path.realpath(__file__).split("/")[:-1])
-            try:
-                playsound.playsound(f"{script_dir}/ost/{id}.mp3")
-            except Exception as e:
-                print(e)
-                music = False
+#    def ost(id):
+#        global music
+#        
+#        if music:
+#
+#            if settings("music") == "0":
+#                music = False
+#                return
+#
+#            if os.name != "posix":
+#                script_dir = os.path.dirname(__file__)
+#            else:
+#                script_dir = "/".join(os.path.realpath(__file__).split("/")[:-1])
+#            try:
+#                playsound.playsound(f"{script_dir}/ost/{id}.mp3")
+#            except Exception as e:
+#                print(e)
+#                music = False
+#            input()
 
 
     def clear():
@@ -369,12 +370,12 @@ Palavra ou letra: """)
                 if len(uinput) >= 2:
                     if cword == uinput:
                         print("Acerto!")
-                        ost(2)
+#                        ost(2)
                         playerstat(0)
                         wannacontinue()
                     else:
                         tries -= 1
-                        ost(1)
+#                        ost(1)
                 elif len(uinput) == 1 and uinput[0] != "/":
                     if uinput not in letters:
                         letters.add(uinput)
@@ -382,16 +383,16 @@ Palavra ou letra: """)
                             for i in range(len(cword)):
                                 if cword[i] == uinput:
                                     povlist[i] = uinput
-                            ost(2)
+#                            ost(2)
                             pov = ''.join(povlist)
                             if '_' not in pov:
                                 print("Fim de jogo.")
                                 playerstat(0)
-                                ost(3)
+#                                ost(3)
                                 wannacontinue()
                         else:
                             tries -= 1
-                            ost(1)
+#                            ost(1)
                 elif len(uinput) <= 0:
                     print("Escreva alguma coisa.")
                     input()
